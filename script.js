@@ -1,10 +1,12 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const introductionSection = document.getElementById("introduction");
-    const imageSection = document.getElementById("image-section");
-    const animateButton = document.getElementById("animateButton");
-  
-    animateButton.addEventListener("click", function() {
-      introductionSection.classList.add("fade-in");
-      imageSection.classList.add("slide-in");
-    });
-  });
+function changeText() {
+  // this should change the displlay text
+  let textList = ['text1','text2','text3','text4','text5'];
+  let randomNumber = getRandomNumber(0, textList.length - 1);
+  console.log(randomNumber);
+  document.getElementById('header').innerHTML = textList[randomNumber];
+}
+
+function getRandomNumber(min,max) {
+  // generate a random number between a range
+  return Math.floor(Math.random()*(max-min + 1)+min);
+}
